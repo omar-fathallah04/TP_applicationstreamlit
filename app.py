@@ -19,14 +19,6 @@ Elle utilise un modèle de Machine Learning déjà entraîné et sauvegardé dan
 
 
 # 1. Chargement du modèle
-
-@st.cache_resource
-def load_model():
-    model = joblib.load("Model.pkl")  # même nom que dans le script d'entraînement
-    return model
-
-model = load_model()
-
 def clean_categorical(df):
     cat_cols = df.select_dtypes(include=["object"]).columns
 
@@ -39,6 +31,15 @@ def clean_categorical(df):
         )
     
     return df
+    
+@st.cache_resource
+def load_model():
+    model = joblib.load("Model.pkl")  # même nom que dans le script d'entraînement
+    return model
+
+model = load_model()
+
+
 
 
 

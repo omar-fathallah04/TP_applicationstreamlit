@@ -28,7 +28,6 @@ def load_model():
 model = load_model()
 
 def clean_categorical(df):
-    df = df.copy()
     # On détecte seulement les colonnes qualitatives
     cat_cols = df.select_dtypes(include=["object"]).columns
 

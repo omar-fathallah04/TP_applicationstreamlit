@@ -43,7 +43,7 @@ def clean_categorical(df):
      # On peut modéfier certaines variables de df en particulier avant de retourner df
     return df
 
-cleaner = FunctionTransformer(clean_categorical)
+
 
 # 2. Formulaire de saisie des variables
 #    Variables : sbp, ldl, adiposity, obesity, age, famhist

@@ -9,7 +9,7 @@ st.set_page_config(
     page_icon="🫀",
     layout="centered"
 )
-st.title("Application de omar fathallah")
+st.title("Application de FATHALLAH Omar")
 st.title("🩺 Application de prédiction du risque de maladie cardiaque (CHD)")
 st.write("""
 Cette application web a été **développée avec VS Code** et déployée avec **Streamlit**.

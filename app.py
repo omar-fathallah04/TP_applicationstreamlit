@@ -27,6 +27,23 @@ def load_model():
 
 model = load_model()
 
+def clean_categorical(df):
+    df = df.copy()
+    # On détecte seulement les colonnes qualitatives
+    cat_cols = df.select_dtypes(include=["object"]).columns
+
+    for col in cat_cols:
+        df[col] = (
+            df[col]
+            .astype(str)
+            .str.strip()      # enlever espaces
+            .str.lower()      # minuscule
+        )
+    
+     # On peut modéfier certaines variables de df en particulier avant de retourner df
+    return df
+
+cleaner = FunctionTransformer(clean_categorical)
 
 # 2. Formulaire de saisie des variables
 #    Variables : sbp, ldl, adiposity, obesity, age, famhist
